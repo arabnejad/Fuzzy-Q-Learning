@@ -19,7 +19,7 @@ asg
 ```
 
 
-## Verify Stack creation:
+### Verify Stack creation:
 ```
 heat stack-list ; nova list
 ```
