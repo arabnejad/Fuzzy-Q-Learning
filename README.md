@@ -6,7 +6,7 @@
 A source code implementation of Fuzzy Q-Learning in OpenStack (IaaS cloud infrastructure)
 It divide into main part : 1) HEAT template files for creating your own stack in OpenStack and 2) source code implementation of FQL in Python which will be run and executed inside of control VM created by HEAT files
 
-# To create your stack from HEAT file :
+## Create your stack :
 
 ```
 heat stack-create -f autoscaling.yaml \
@@ -17,6 +17,13 @@ heat stack-create -f autoscaling.yaml \
 -P desired_capacity=1 \
 asg
 ```
+
+
+## Verify Stack creation:
+```
+heat stack-list ; nova list
+```
+
 also, you can modify any input parameters in HEAT template file (autoscaling.yaml) by passing your prefered value in 'heat stack-create' command
 
 # Contact
