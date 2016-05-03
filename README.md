@@ -9,7 +9,13 @@ It divide into main part : 1) HEAT template files for creating your own stack in
 # To create your stack from HEAT file :
 
 ```
-heat stack-create -f autoscaling.yaml -P "network=$(neutron net-show private -F id -f value);subnet_id=$(neutron subnet-show private-subnet -F id -f value);external_network_id=$(neutron net-show public -F id -f value);OS_AUTH_URL=$OS_AUTH_URL;desired_capacity=1" asg
+heat stack-create -f autoscaling.yaml \
+-P network=$(neutron net-show private -F id -f value) \
+-P subnet_id=$(neutron subnet-show private-subnet -F id -f value) \
+-P external_network_id=$(neutron net-show public -F id -f value) \
+-P OS_AUTH_URL=$OS_AUTH_URL \
+-P desired_capacity=1 \
+asg
 ```
 also, you can modify any input parameters in HEAT template file (autoscaling.yaml) by passing your prefered value in 'heat stack-create' command
 
